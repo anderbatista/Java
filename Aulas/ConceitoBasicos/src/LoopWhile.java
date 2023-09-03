@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OutroLoop {
+public class LoopWhile {
     public static void main(String[] args) {
         Scanner leitura = new Scanner(System.in);
         double nota = 0;

@@ -1,9 +1,12 @@
+package Controller;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
+import Service.LimpaConsole;
+import Service.CadastroUsuario;
 
-        String inicio = """
+public class BancoController {
+    public static void main(String[] args) {
+        String telaBemVindo = """
                  *********************************************************************
                  - Bem vindo!
                  - Este é o meu primeiro projeto de console em JAVA.               
@@ -12,15 +15,16 @@ public class Main {
                  receber valor, transferir valor e sair da aplicação.
                  - Vamos lá!
                  *********************************************************************
+                 
+                 >>>> Pressione enter
                 """;
-        System.out.println(inicio);
+        System.out.printf(telaBemVindo);
 
-        String nome;
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
 
-        Scanner dados = new Scanner(System.in);
-        System.out.printf("Digite seu nome e sobrenome: ");
-        nome = dados.nextLine();
+        //LimpaConsole.limpaConsole();
+        CadastroUsuario.CadastroUser();
 
-        System.out.println("Nome: " + nome);
     }
 }
