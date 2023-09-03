@@ -26,5 +26,40 @@ public class BancoController {
         //LimpaConsole.limpaConsole();
         CadastroUsuario.CadastroUser();
 
+        String inicioAplicacao = """
+                *********************************************************************
+                 - Operações
+                 
+                 1- Consultar saldo               
+                 2- Receber valor
+                 3- Transferir valor
+                 4- Sair
+                *********************************************************************
+                 
+                 >>>> Opção desejada: 
+                """;
+        System.out.printf(inicioAplicacao);
+
+
+        int opcaoDesejada = 0;
+        scanner.nextInt();
+
+        String teste;
+        switch (opcaoDesejada){
+            case 1:
+                teste = "Em manutenção";
+                break;
+            case 2:
+                teste = "Em manutenção";
+                break;
+            case 3:
+                teste = "Em manutenção";
+                break;
+            case 4:
+                teste = "Em manutenção";
+                break;
+
+        }
+
     }
 }
