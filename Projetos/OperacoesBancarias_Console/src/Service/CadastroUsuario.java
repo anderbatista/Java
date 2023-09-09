@@ -1,19 +1,27 @@
 package Service;
-import Service.LimpaConsole;
 
 import java.util.Scanner;
 
 public class CadastroUsuario {
-    public static void CadastroUser() {
+    private String nome;
+    private int opcoesTipoDeConta;
+    private String tipoConta;
+    private Scanner dados = new Scanner(System.in);
+    private double saldoInicial;
 
-        String nome;
-        int opcoesTipoDeConta;
-        String tipoConta;
-        double saldoinicial;
+    public CadastroUsuario() {
+        this.saldoInicial = getSaldoInicial();
+    }
 
-        LimpaConsole.limpaConsole();
+    public double getSaldoInicial() {
+        return saldoInicial;
+    }
 
-        Scanner dados = new Scanner(System.in);
+    public void setSaldoInicial(double saldo) {
+        this.saldoInicial = saldo;
+    }
+
+    public void cadastrarUsuario() {
         System.out.printf("Digite seu nome e sobrenome: ");
         nome = dados.nextLine();
         while (true) {
@@ -38,9 +46,8 @@ public class CadastroUsuario {
             }
         }
 
-        System.out.printf("Saldo inicial: ");
-        saldoinicial = dados.nextDouble();
-
+        System.out.printf("Saldo inicial -> ");
+        saldoInicial = dados.nextDouble();
 
         String inicioApp = """
         *********************************************************************
@@ -49,7 +56,6 @@ public class CadastroUsuario {
         System.out.println(inicioApp);
         System.out.println("Nome: " + nome);
         System.out.println("Tipo de conta: " + tipoConta);
-        System.out.println("Saldo inicial: " + saldoinicial);
-        System.out.println("*********************************************************************");
+        System.out.println("Saldo inicial: R$" + saldoInicial);
     }
 }
